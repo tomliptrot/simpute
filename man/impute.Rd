@@ -7,6 +7,7 @@
 \alias{impute.factor}
 \alias{impute.logical}
 \alias{impute.data.frame}
+\alias{impute.tbl_df}
 \title{Simple Imputation}
 \usage{
 impute(x, ...)
@@ -20,6 +21,8 @@ impute(x, ...)
 \method{impute}{logical}(x)
 
 \method{impute}{data.frame}(x, ...)
+
+\method{impute}{tbl_df}(x, ...)
 }
 \arguments{
 \item{x}{Numeric, Factor, Logical or Charater vector, or a Data Frame}
@@ -28,12 +31,17 @@ impute(x, ...)
 
 \item{.fun}{a fuction (default median) to use for imputation}
 }
+\value{
+an imputed dataset of the  same class as x
+}
 \description{
-Generic simple Imputation method
+Generic simple imputation method
 }
 \section{Methods (by class)}{
 \itemize{
 \item \code{numeric}: Median Imputation for a numeric Vector
+
+Median Imputation for a numeric Vector
 
 \item \code{character}: Mode Imputation for a character vector
 
@@ -41,6 +49,8 @@ Generic simple Imputation method
 
 \item \code{logical}: Mode Imputation for a logical vector
 
-\item \code{data.frame}: ddata frame imputation
+\item \code{data.frame}: data frame imputation
+
+\item \code{tbl_df}: data frame imputation
 }}
 

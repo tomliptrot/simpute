@@ -2,15 +2,18 @@ Package: simpute
 Title: Simple Imputation
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Tom",
+           family = "Liptrot",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
+           email = "tom@ortom.co.uk",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: Really Simple Imputation
 License: What license it uses
 Encoding: UTF-8
 LazyData: true
 Suggests: 
     testthat (>= 2.1.0)
 RoxygenNote: 6.1.1
+Imports: 
+    purrr,
+    dplyr
