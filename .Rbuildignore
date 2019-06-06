@@ -1,2 +1,4 @@
 ^simpute\.Rproj$
 ^\.Rproj\.user$
+^\.travis\.yml$
+make.r
