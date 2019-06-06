@@ -4,7 +4,7 @@
 [![Travis build status](https://travis-ci.org/tomliptrot/simpute.svg?branch=master)](https://travis-ci.org/tomliptrot/simpute)
 <!-- badges: end -->
 
-The goal of simpute is to provide a really simple set of imputation methods that work for all data types and provide a quick starting point for modelliing tasks.
+The goal of simpute  to do Simple Imputation that works for all data types and provides a quick starting point for modelliing tasks. Many other packages do more complex forms of imputation (MICE, Amelia, missForest, Hmisc, mi). Simpute is quick, simple and robust.
 
 ## Installation
 
@@ -16,7 +16,7 @@ devtools::install_github("tomliptrot/simpute")
 
 ## Example
 
-The most basic use case is to impute anymissing value in a dataframe using the `impute` function
+The most basic use case is to impute any missing value in a dataframe using the `impute` function. This is done using the median for continous data and the mode for categorical data.
 
 ``` r
 library(simpute)

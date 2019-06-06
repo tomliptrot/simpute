@@ -8,7 +8,7 @@
 #' @param n the number of rows to use to sample from when calculating the proportion of missing vaalue. useful for large datasets. (default = 1000)
 #' @return a \code{dataframe} with missing rows removed
 #' @export
-remove_high_missing_col = function (x, prop = 1, n = 1000) {
+remove_high_missing_col = function (x, prop = 1, n = 1000, verbose = TRUE) {
   if(nrow(x) > n){
     sample_rows = sample.int(nrow(x), size = n)
     
@@ -23,8 +23,9 @@ remove_high_missing_col = function (x, prop = 1, n = 1000) {
   }
 
   index = prop_missing < prop
-  cat("Removing", sum(!index), "columns with", prop * 100, 
-      "% or more missing data")
+  if(verbose){
+    cat("Removing", sum(!index), "columns with", prop * 100, "% or more missing data\n")
+  }
   out = x[, index]
   out
 }
@@ -39,7 +40,7 @@ remove_high_missing_col = function (x, prop = 1, n = 1000) {
 #' @param n the number of columns to use to sample from when calculating the proportion of missing vaalue. useful for large datasets. (default = 1000)
 #' @return a \code{dataframe} with missing rowss removed
 #' @export
-remove_high_missing_row = function (x, prop = 1, n = 1000) {
+remove_high_missing_row = function (x, prop = 1, n = 1000, verbose = TRUE) {
   
   if(ncol(x) > n){
     sample_cols = sample.int(ncol(x), size = n)
@@ -54,8 +55,9 @@ remove_high_missing_row = function (x, prop = 1, n = 1000) {
   }
 
   index = prop_missing < prop
-  cat("Removing", sum(!index), "rows with", prop * 100, 
-      "% or more missing data")
+  if(verbose){
+  cat("Removing", sum(!index), "rows with", prop * 100, "% or more missing data\n")
+  }
   out = x[index, ]
   out
 }
