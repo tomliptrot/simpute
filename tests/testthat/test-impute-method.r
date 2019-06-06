@@ -9,7 +9,10 @@ test_that("numeric median imputation works", {
 
 test_that("character mode imputation works", {
   expect_equal(impute(c('a', 'a', NA, 'b')), c('a', 'a', 'a', 'b'))
-  expect_equal(impute(c(NA, NA, NA, NA)), c(NA, NA, NA, NA))
+  
+  expect_warning(val <- impute(c(NA, NA, NA, NA)))
+  
+  expect_equal(val, c(NA, NA, NA, NA))
 })
 
 test_that("factor mode imputation works", {

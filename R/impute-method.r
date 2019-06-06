@@ -20,31 +20,34 @@ impute <- function (x, ...) {
 #' @param .fun a fuction (default median) to use for imputation
 #' @export
 impute.numeric = function(x, .fun = median,...){
-  if(all(is.na(x))) {
+  na_mask = is.na(x)
+  if(all(na_mask)) {
     warning('All data missing, returning original')
     return(x)
   }
-  x[is.na(x)] = .fun(x, na.rm = TRUE,...)
+  x[na_mask] = .fun(x, na.rm = TRUE,...)
   x
 }
 
 #' @describeIn impute Mode Imputation for a character vector
 #' @export
 impute.character = function(x){
-  if(all(is.na(x))) {
+  na_mask = is.na(x)
+  if(all(na_mask)) {
     warning('All data missing, returning original')
     return(x)
   }
   tt = table(x)
   mode = names(sort(tt, decreasing = TRUE))[1]
-  x[is.na(x)] = mode
+  x[na_mask] = mode
   x
 }
 
 #' @describeIn impute Mode Imputation for a factor vector
 #' @export
 impute.factor = function(x){
-  if(all(is.na(x))) {
+  na_mask = is.na(x)
+  if(all(na_mask)) {
     warning('All data missing, returning original')
     return(x)
   }
@@ -54,7 +57,8 @@ impute.factor = function(x){
 #' @describeIn impute Mode Imputation for a logical vector
 #' @export
 impute.logical = function(x){
-  if(all(is.na(x))) {
+  na_mask = is.na(x)
+  if(all(na_mask)) {
     warning('All data missing, returning original')
     return(x)
   }
