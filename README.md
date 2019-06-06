@@ -14,7 +14,7 @@ You can install the development version of simpute from github:
 devtools::install_github("tomliptrot/simpute")
 ```
 
-## Example
+## Example 1: imputation
 
 The most basic use case is to impute any missing value in a dataframe using the `impute` function. This is done using the median for continous data and the mode for categorical data.
 
@@ -44,3 +44,15 @@ summary(airquality_complete)
  Max.   :168.00   Max.   :334.0   Max.   :20.700   Max.   :97.00   Max.   :9.000   Max.   :31.0  
 ```
 
+## Example 2: removing excess missing rows and columns
+ In some cases there is too much missing data and it might be a beeter idea to completly remove either a row or column. In these cases we can use the functions `remove_high_missing_row` or `remove_high_missing_col`.
+
+
+``` r
+library(simpute)
+
+remove_missing_col(airquality,  prop = 0.1)
+
+remove_missing_row(airquality,  prop = 0.1)
+
+```
