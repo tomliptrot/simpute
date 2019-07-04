@@ -45,7 +45,7 @@ remove_missing_row(airquality,  prop = 0.1)
 
 ```
 
-## Example 3: Piping
+## Example 3: piping
 These functions can all be piped together using `%>%` 
 
 ``` r
@@ -53,7 +53,7 @@ library(simpute)
 
 airquality %>%
   remove_missing_col(prop = 0.8) %>%
-  remove_missing_row(airquality,  prop = 0.8)  %>%
+  remove_missing_row(prop = 0.8)  %>%
   impute()
 
 ```
