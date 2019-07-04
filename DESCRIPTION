@@ -8,7 +8,7 @@ Authors@R:
            email = "tom@ortom.co.uk",
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: Really Simple Imputation
-License: What license it uses
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Suggests: 

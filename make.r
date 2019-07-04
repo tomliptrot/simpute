@@ -1,5 +1,8 @@
 library(devtools)
+library(usethis)
 setwd('~/simpute')
+
+use_mit_license('Tom Liptrot')
 load_all()
 install()
 
