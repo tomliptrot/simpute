@@ -22,14 +22,14 @@ The most basic use case is to impute all missing values in a dataframe using the
 library(simpute)
 colSums(is.na(airquality))
 
-Ozone Solar.R    Wind    Temp   Month     Day 
-37       7       0       0       0       0 
+# Ozone Solar.R    Wind    Temp   Month     Day 
+# 37       7       0       0       0       0 
 
 airquality_complete = impute(airquality)
 colSums(is.na(airquality_complete))
 
-Ozone Solar.R    Wind    Temp   Month     Day 
-0       0       0       0       0       0 
+# Ozone Solar.R    Wind    Temp   Month     Day 
+#  0       0       0       0       0       0 
 ```
 
 ## Example 2: removing excess missing rows and columns
